@@ -4,7 +4,7 @@ class Hero {
     }
     
     HitBySword() {
-      if(this.weapons.sword != null) {
+      if(this.weapons.sword) {
         this.weapons.sword.Hit();  
         return;
       }
@@ -12,7 +12,7 @@ class Hero {
     }
     
      BowShoot() {
-      if(this.weapons.bow != null) {
+      if(this.weapons.bow) {
         this.weapons.bow.Shoot();
         return;
       }
@@ -20,32 +20,32 @@ class Hero {
     }
     
     CrossBowShoot() {
-      if(this.weapons.crossBow != null) {
+      if(this.weapons.crossBow) {
         this.weapons.crossBow.Shoot();
         return;
       }
       alert(`You don't have a crossbow`);
     }
-  }
+}
   
-  class Sword {
-    Hit() {
-      alert(`Hit an enemy with a sword`);
-    }
+class Sword {
+  Hit() {
+    alert(`Hit an enemy with a sword`);
   }
+}
   
-  class Bow {
-    Shoot() {
-      alert(`Shoot an enemy with a bow`);
-    }
+class Bow {
+  Shoot() {
+    alert(`Shoot an enemy with a bow`);
   }
+}
   
-  let weapons = {
-    sword : new Sword(),
-    bow : new Bow()
-  };
+let weapons = {
+  sword : new Sword(),
+  bow : new Bow()
+};
 
-  hero = new Hero(weapons);
-  hero.HitBySword();
-  hero.BowShoot();
-  hero.CrossBowShoot();
+hero = new Hero(weapons);
+hero.HitBySword();
+hero.BowShoot();
+hero.CrossBowShoot();
